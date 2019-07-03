@@ -10,8 +10,9 @@ function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
 	return (
 		<Paper>
 			<List>
-				{todos.map((todo) => (
+				{todos.map((todo, i) => (
 					<Fragment>
+						{i > 0 && <Divider />}
 						<Todo
 							id={todo.id}
 							task={todo.task}
@@ -21,7 +22,7 @@ function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
 							toggleTodo={toggleTodo}
 							editTodo={editTodo}
 						/>
-						<Divider />
+						{i < todos.length - 1 && <Divider />}
 					</Fragment>
 				))}
 			</List>
