@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import useToggle from './hooks/useToggle';
+import EditTodoForm from './EditTodoForm';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -8,12 +9,12 @@ import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 import EditIcon from '@material-ui/icons/Edit';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
-function Todo({ task, completed, removeTodo, id, toggleTodo }) {
-	const [ isEditing, toggle ] = useToggle();
+function Todo({ id, task, completed, removeTodo, toggleTodo, editTodo }) {
+	const [ isEditing, toggle ] = useToggle(false);
 	return (
 		<ListItem>
 			{isEditing ? (
-				<h1>Editing!</h1>
+				<EditTodoForm editTodo={editTodo} id={id} task={task} toggleEdit={toggle} />
 			) : (
 				<Fragment>
 					<Checkbox tabIndex={-1} checked={completed} onClick={() => toggleTodo(id)} />
