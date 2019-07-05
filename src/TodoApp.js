@@ -1,5 +1,4 @@
 import React from 'react';
-import useTodoState from './hooks/useTodoState';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 import Typography from '@material-ui/core/Typography';
@@ -10,14 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import { TodosProvider } from './contexts/todos.context';
 
 function TodoApp() {
-	const initialTodos = [ { id: 1, task: 'Enter kumite tournament', completed: false } ];
-	// const starterTodos = [
-	// 	{ id: 1, task: 'Walk dog', completed: false },
-	// 	{ id: 2, task: 'Enter kumite tournament', completed: true },
-	// 	{ id: 3, task: 'Regret joining tournament and hide', completed: false }
-	// ];
-	const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodoState(initialTodos);
-
 	return (
 		<Paper
 			style={{
@@ -36,8 +27,8 @@ function TodoApp() {
 			<Grid container justify="center" style={{ marginTop: '1rem' }}>
 				<Grid item xs={11} md={8} lg={4}>
 					<TodosProvider>
-						<TodoForm addTodo={addTodo} />
-						<TodoList removeTodo={removeTodo} todos={todos} toggleTodo={toggleTodo} editTodo={editTodo} />
+						<TodoForm />
+						<TodoList />
 					</TodosProvider>
 				</Grid>
 			</Grid>
@@ -46,3 +37,9 @@ function TodoApp() {
 }
 
 export default TodoApp;
+
+// const starterTodos = [
+// 	{ id: 1, task: 'Walk dog', completed: false },
+// 	{ id: 2, task: 'Enter kumite tournament', completed: true },
+// 	{ id: 3, task: 'Regret joining tournament and hide', completed: false }
+// ];
