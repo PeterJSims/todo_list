@@ -21,7 +21,7 @@ function TodoApp() {
 		>
 			<AppBar color="primary" position="static" style={{ height: '64px' }}>
 				<Toolbar>
-					<Typography color="inherit">Todos (now with hooks!)</Typography>
+					<Typography color="inherit">Todos</Typography>
 				</Toolbar>
 			</AppBar>
 			<Grid container justify="center" style={{ marginTop: '1rem' }}>
