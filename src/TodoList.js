@@ -12,7 +12,7 @@ function TodoList() {
 			<Paper>
 				<List>
 					{todos.map((todo, i) => (
-						<Fragment>
+						<Fragment key={i}>
 							{i > 0 && <Divider />}
 							<Todo {...todo} key={todo.id} />
 							{i < todos.length - 1 && <Divider />}

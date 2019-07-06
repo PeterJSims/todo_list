@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, Fragment, memo } from 'react';
 import useToggle from './hooks/useToggleState';
 import EditTodoForm from './EditTodoForm';
 import ListItem from '@material-ui/core/ListItem';
@@ -35,4 +35,4 @@ function Todo({ id, task, completed }) {
 	);
 }
 
-export default Todo;
+export default memo(Todo);
