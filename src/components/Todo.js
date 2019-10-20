@@ -1,5 +1,5 @@
 import React, { useContext, Fragment, memo } from 'react';
-import useToggle from './hooks/useToggleState';
+import useToggle from '../hooks/useToggleState';
 import EditTodoForm from './EditTodoForm';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 import EditIcon from '@material-ui/icons/Edit';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import { DispatchContext } from './contexts/todos.context';
+import { DispatchContext } from '../contexts/todos.context';
 
 function Todo({ id, task, completed }) {
 	const dispatch = useContext(DispatchContext);
